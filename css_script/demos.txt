@@ -1,0 +1,7 @@
+# scr1.png
+fill black
+circle 10 10 100 100
+circle 70 10 100 100
+fill orange
+circle 20 20 80 80
+circle 80 20 80 80
