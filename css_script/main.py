@@ -22,8 +22,10 @@ class CssScript:
     </style>
 </head>
 <body>
+<div>
         """
         self.footer = """
+</div>
 </body>
 </html>
         """
@@ -182,6 +184,9 @@ class CssScript:
 script = CssScript('file.candy')
 script.exec()
     
+
+
+
 
 
 

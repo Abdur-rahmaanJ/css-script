@@ -1,0 +1,48 @@
+div{
+    font-family: Raleway;
+}
+h1{
+    text-align: center;
+}
+h2{
+    color:#e6007e;
+}
+h3{
+    color: green;
+}
+.syntax{
+    margin: 5px; padding: 10px;
+    margin-bottom: 0px;
+    background-color: #ffb74d;
+}
+.demo{
+    margin: 5px; padding: 10px;
+    margin-top: 0; margin-bottom: 0;
+    color: white;
+    background-color: #444;
+}
+.demo:last-child { 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.sec_title{
+    margin: 5px;
+    font-size: 30px; font-weight: bold; 
+}
+.sec_body{
+    margin: 5px;
+    font-family: 'Slabo 27px', serif; font-weight: bold;
+    color: #b53598;
+}
+.sec
+{
+    margin: 20px; padding: 20px;
+    border: 5px dashed #e6007e;
+    border-radius: 10px;
+}
+
+.output
+{
+    position: absolute;
+}

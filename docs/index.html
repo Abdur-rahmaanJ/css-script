@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>css script</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <main>
@@ -9,74 +12,65 @@
             UNDER CONSTRUCTION
         </div>
         <nav>
-            
+            <a href="index.html"><button>home</button></a>
+            <a href="docs.html"><button>docs</button></a>
+            <a href="gallery.html"><button>gallery</button></a>
         </nav>
-        <h1>docs</h1>
-        <div>
-            <h2>comment</h2>
-            <div>
-                <h3>#</h3>
-                <div class="syntax"># comment</div>
-                <div class="demo"># TODO: get that done</div>
+        <h1>home</h1>
+        <div class="sec">
+            <div class="sec_title">
+                what is css script?
+            </div>
+            <div class="sec_body">
+                it is an HPL; a Hybrid Programming Language, halfway between a DSL and a GPL<br>
+                it is used to generate css shapes<br>
+                it's main and original compiler is based on python
             </div>
         </div>
-        <div>
-            <h2>shapes</h2>
-            <div>
-                <h3>rect</h3>
-                <div class="syntax">rect x y size-x size-y</div>
-                <div class="demo">rect 100 100 20 40</div>
+        <div class="sec">
+            <div class="sec_title">
+                do i need to know css?
             </div>
-            <div>
-                <h3>circle</h3>
-                <div class="syntax">circle x y size-x size-y</div>
-                <div class="demo">circle 100 100 30 30</div>
+            <div class="sec_body">
+                no, you can use it without any css knowledge
             </div>
         </div>
-        <div>
-            <h2>colors</h2>
-            <div>
-                <h3>fill</h3>
-                <div class="syntax">fill color</div>
-                <div class="demo">fill #eee</div>
-                <div class="demo">fill rgba(100, 100, 100, 0.5)</div>
-                <div class="demo">fill orange</div>
+        <div class="sec">
+            <div class="sec_title">
+                what languages inspired it?
+            </div>
+            <div class="sec_body">
+                python, pug (yes pug is a language), <a href="https://www.processing.org">processing</a> and more precisely Design By Numbers
             </div>
         </div>
-        <div>
-            <h2>text</h2>
-            <div>
-                <h3>text</h3>
-                <div class="syntax">text x y text text</div>
-                <div class="demo">text x y css script demo</div>
+        <div class="sec">
+            <div class="sec_title">
+                where is the syntax going?
+            </div>
+            <div class="sec_body">
+                it is following the processing api / syntax
             </div>
         </div>
+        <h1>demo</h1>
         <div>
-            <h2>structures</h2>
-            <div>
-                <h3>variable</h3>
-                <div class="syntax">set name value</div>
-                <div class="demo">set x 3</div>
-            </div>
-            <div>
-                <h3>function definition</h3>
-                <div class="syntax">+ name</div>
-                <div class="demo">
-                    <pre>
-+ draw_it
-rect 100 100 30 30
+            <div class="code">
+<pre>
+fill black
+circle 10 10 100 100
+circle 70 10 100 100
 
-# others
-                    </pre>
-                </div>
-            </div>
-            <div>
-                <h3>function call</h3>
-                <div class="syntax">call name</div>
-                <div class="demo">call draw_it</div>
-            </div>
-        </div>
+fill orange
+circle 20 20 80 80
+circle 80 20 80 80
 
+</pre>
+            </div>
+            <div class="output">
+    <div style="position:absolute;left:10px;top:10px;width:100px;height:100px;background-color:black;border-radius:50%;" class=" "></div>
+    <div style="position:absolute;left:70px;top:10px;width:100px;height:100px;background-color:black;border-radius:50%;" class=" "></div>
+    <div style="position:absolute;left:20px;top:20px;width:80px;height:80px;background-color:orange;border-radius:50%;" class=" "></div>
+    <div style="position:absolute;left:80px;top:20px;width:80px;height:80px;background-color:orange;border-radius:50%;" class=" "></div>
+            </div>
         </div>
     </main>
 </body>
