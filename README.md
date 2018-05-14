@@ -1,6 +1,9 @@
 # css-script
 css script : the script for css shapes
 
+# file extention
+.candy 
+
 # 📦 demo
 [here](https://abdur-rahmaanj.github.io/css-script/)
 
