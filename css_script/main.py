@@ -22,7 +22,7 @@ class CssScript:
     </style>
 </head>
 <body>
-<div>
+<div style="position:relative;">
         """
         self.footer = """
 </div>
@@ -63,6 +63,14 @@ class CssScript:
         self.out(
                 self.elem(x, y, 'width:{}px;height:{}px;background-color:{};'.format(width, 
                 height, self.bg_col))
+            )
+    def roundRect(self, x, y, width, height, br, bl, tr, tl):
+        self.out(
+                self.elem(x, y, 'width:{}px;height:{}px;background-color:{};\
+border-bottom-right-radius:{}px;border-bottom-left-radius:{}px;\
+border-top-right-radius:{}px;border-top-left-radius:{}px;\
+                '.format(width, 
+                height, self.bg_col, br, bl, tr, tl))
             )
                 
     def text(self, x, y, text):
@@ -105,6 +113,20 @@ class CssScript:
                 sizex = self.resolve_digit(self.vars, params[2])
                 sizey = self.resolve_digit(self.vars, params[3])
                 self.rect(x, y, sizex, sizey)
+                
+        elif command == 'roundRect':
+            params = params.split(' ')
+            if len(params) == 8:
+                x = self.resolve_digit(self.vars, params[0]) 
+                y = self.resolve_digit(self.vars, params[1])
+                sizex = self.resolve_digit(self.vars, params[2])
+                sizey = self.resolve_digit(self.vars, params[3])
+                br = self.resolve_digit(self.vars, params[4])
+                bl = self.resolve_digit(self.vars, params[5])
+                tr = self.resolve_digit(self.vars, params[6])
+                tl = self.resolve_digit(self.vars, params[7])
+                self.roundRect(x, y, sizex, sizey,  br, bl, tr, tl)
+                
         elif command == 'fill':
             self.fill(params)
             

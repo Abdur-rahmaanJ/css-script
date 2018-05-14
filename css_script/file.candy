@@ -1,41 +1,20 @@
-# beg of prog
-# fill rgba(0,100,0,0.5)
-# circle 10 10 100 100
+# roundRect and var
 
-# rect
-# fill black
-# rect 10 200 100 100
+fill #eee
+rect 10 0 100 10
 
-# FUNC IS ENDED BY NEW LINE
-+ draw_it
-fill black
-rect 410 200 300 100
+set height 30
+set width 20
+set y 10
+set r 15
 
-call draw_it
-# set x 100
-# set y 10
-# set z [12 22 22 34]
-
-# + draw_it _x _y _z _ denotes func var
-# call draw_it 1 2 3
-
-fill black
-circle 10 10 100 100
-circle 70 10 100 100
-fill orange
-circle 20 20 80 80
-circle 80 20 80 80
-fill green
-text 100 110 abcdef wbcke ehvbek whfurfhcreu bfe
-fill pink
-text 100 120 abcdef wbcke ehvbek whfurfhcreu bfe
-fill #ccc
-rect 100 100 20 20
-
-set x 300
-set y 300
-
-rect x y 100 100
-fill blue
-circle x y 500 200
-text x 110 ihwbfir3 3irfb3irf 3hrbfi3
+fill #ff6464
+roundRect 10 y width height r r 0 0
+fill gray
+roundRect 30 y width height r r 0 0
+fill #ff6464
+roundRect 50 y width height r r 0 0
+fill gray
+roundRect 70 y width height r r 0 0
+fill #ff6464
+roundRect 90 y width height r r 0 0

@@ -16,7 +16,7 @@
             <a href="docs.html"><button>docs</button></a>
             <a href="gallery.html"><button>gallery</button></a>
         </nav>
-        <h1>home</h1>
+        <h1>[ home | <a href="https://github.com/Abdur-rahmaanJ/css-script">fork us on github</a> ]</h1>
         <div class="sec">
             <div class="sec_title">
                 what is css script?
@@ -52,7 +52,7 @@
             </div>
         </div>
         <h1>demo</h1>
-        <div>
+        <div class="sample">
             <div class="code">
 <pre>
 fill black
@@ -66,12 +66,84 @@ circle 80 20 80 80
 </pre>
             </div>
             <div class="output">
-    <div style="position:absolute;left:10px;top:10px;width:100px;height:100px;background-color:black;border-radius:50%;" class=" "></div>
-    <div style="position:absolute;left:70px;top:10px;width:100px;height:100px;background-color:black;border-radius:50%;" class=" "></div>
-    <div style="position:absolute;left:20px;top:20px;width:80px;height:80px;background-color:orange;border-radius:50%;" class=" "></div>
-    <div style="position:absolute;left:80px;top:20px;width:80px;height:80px;background-color:orange;border-radius:50%;" class=" "></div>
+                    <div style="position:absolute;left:10px;top:10px;width:100px;height:100px;background-color:black;border-radius:50%;" class=" "></div>
+                    <div style="position:absolute;left:70px;top:10px;width:100px;height:100px;background-color:black;border-radius:50%;" class=" "></div>
+                    <div style="position:absolute;left:20px;top:20px;width:80px;height:80px;background-color:orange;border-radius:50%;" class=" "></div>
+                    <div style="position:absolute;left:80px;top:20px;width:80px;height:80px;background-color:orange;border-radius:50%;" class=" "></div>
+            </div>
+        </div>
+
+        <div class="sample">
+            <div class="code">
+<pre>
+fill black
+rect 0 0 130 130
+
+fill red
+rect 10 10 50 50
+fill blue
+rect 10 70 50 50
+fill yellow
+rect 70 10 50 50
+fill green
+rect 70 70 50 50
+
+fill black
+text 10 135 our mauritian's flag color
+text 10 145 is red blue yellow green
+
+</pre>
+            </div>
+            <div class="output">
+                    <div style="position:absolute;left:0px;top:0px;width:130px;height:130px;background-color:black;" class=" "></div>
+                    <div style="position:absolute;left:10px;top:10px;width:50px;height:50px;background-color:red;" class=" "></div>
+                    <div style="position:absolute;left:10px;top:70px;width:50px;height:50px;background-color:blue;" class=" "></div>
+                    <div style="position:absolute;left:70px;top:10px;width:50px;height:50px;background-color:yellow;" class=" "></div>
+                    <div style="position:absolute;left:70px;top:70px;width:50px;height:50px;background-color:green;" class=" "></div>
+                    <div style="position:absolute;left:10px;top:135px;color:black;" class=" ">our mauritian's flag color</div>
+                    <div style="position:absolute;left:10px;top:145px;color:black;" class=" ">is red blue yellow green</div>
+            </div>
+        </div>
+        
+
+        <div class="sample">
+            <div class="code">
+<pre>
+# roundRect and var
+
+fill #eee
+rect 10 0 100 10
+
+set height 30
+set width 20
+set y 10
+set r 15
+
+fill #ff6464
+roundRect 10 y width height r r 0 0
+fill gray
+roundRect 30 y width height r r 0 0
+fill #ff6464
+roundRect 50 y width height r r 0 0
+fill gray
+roundRect 70 y width height r r 0 0
+fill #ff6464
+roundRect 90 y width height r r 0 0
+
+</pre>
+            </div>
+            <div class="output">
+                        <div style="position:absolute;left:10px;top:0px;width:100px;height:10px;background-color:#eee;" class=" "></div>
+                        <div style="position:absolute;left:10px;top:10px;width:20px;height:30px;background-color:#ff6464;border-bottom-right-radius:15px;border-bottom-left-radius:15px;border-top-right-radius:0px;border-top-left-radius:0px;                " class=" "></div>
+                        <div style="position:absolute;left:30px;top:10px;width:20px;height:30px;background-color:gray;border-bottom-right-radius:15px;border-bottom-left-radius:15px;border-top-right-radius:0px;border-top-left-radius:0px;                " class=" "></div>
+                        <div style="position:absolute;left:50px;top:10px;width:20px;height:30px;background-color:#ff6464;border-bottom-right-radius:15px;border-bottom-left-radius:15px;border-top-right-radius:0px;border-top-left-radius:0px;                " class=" "></div>
+                        <div style="position:absolute;left:70px;top:10px;width:20px;height:30px;background-color:gray;border-bottom-right-radius:15px;border-bottom-left-radius:15px;border-top-right-radius:0px;border-top-left-radius:0px;                " class=" "></div>
+                        <div style="position:absolute;left:90px;top:10px;width:20px;height:30px;background-color:#ff6464;border-bottom-right-radius:15px;border-bottom-left-radius:15px;border-top-right-radius:0px;border-top-left-radius:0px;                " class=" "></div>
             </div>
         </div>
     </main>
+    <footer>
+        all rights reserved 2018 - cssscript.org
+    </footer>
 </body>
 </html>

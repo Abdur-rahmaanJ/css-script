@@ -42,7 +42,24 @@ h3{
     border-radius: 10px;
 }
 
-.output
+.code{
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+}
+.output{
+    position: relative;
+}
+.sample{
+    float: left; margin: 10px;
+}
+
+footer
 {
-    position: absolute;
+    background-color: black; margin: 20px; color: white;
+    position: fixed;
+    bottom: -10px; right:10px;
+    padding: 5px;
+    border-radius: 15px;
 }
