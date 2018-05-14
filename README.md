@@ -20,4 +20,4 @@ code in file.candy and run main.py
 beta
 
 # contributing
-have fun peeking around the source code and 
+have fun peeking around the source code and submitting pull requests !
