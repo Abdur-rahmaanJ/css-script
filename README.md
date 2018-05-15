@@ -4,6 +4,10 @@ css script : the script for css shapes
 # file extention
 .candy 
 
+# 🍩 syntax appercu
+![Alt text](screenshots/demo1.png "Optional title")
+![Alt text](screenshots/demo2.png "Optional title")
+
 # 📦 demo
 [here](https://abdur-rahmaanj.github.io/css-script/)
 
