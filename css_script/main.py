@@ -11,14 +11,6 @@ class CssScript:
 <head>
     <title></title>
     <style type="">
-        .abs
-        {
-            position: relative;
-        }
-        .r
-        {
-            border-radius: 50%;
-        }
     </style>
 </head>
 <body>
@@ -71,6 +63,34 @@ border-bottom-right-radius:{}px;border-bottom-left-radius:{}px;\
 border-top-right-radius:{}px;border-top-left-radius:{}px;\
                 '.format(width, 
                 height, self.bg_col, br, bl, tr, tl))
+            )
+                
+    def arrowUp(self, x, y, width, height):
+        self.out(
+                self.elem(x, y, 'width: 0;height: 0;border-left: {}px solid \
+transparent;border-right: {}px solid transparent;border-bottom: {}px \
+solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
+            )
+                
+    def arrowDown(self, x, y, width, height):
+        self.out(
+                self.elem(x, y, 'width: 0;height: 0;border-left: {}px solid \
+transparent;border-right: {}px solid transparent;border-top: {}px \
+solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
+            )
+    
+    def arrowRight(self, x, y, width, height):
+        self.out(
+                self.elem(x, y, 'width: 0;height: 0;border-top: {}px solid \
+transparent;border-bottom: {}px solid transparent;border-left: {}px \
+solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
+            )
+                
+    def arrowLeft(self, x, y, width, height):
+        self.out(
+                self.elem(x, y, 'width: 0;height: 0;border-top: {}px solid \
+transparent;border-bottom: {}px solid transparent;border-right: {}px \
+solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
             )
                 
     def text(self, x, y, text):
@@ -127,6 +147,39 @@ border-top-right-radius:{}px;border-top-left-radius:{}px;\
                 tl = self.resolve_digit(self.vars, params[7])
                 self.roundRect(x, y, sizex, sizey,  br, bl, tr, tl)
                 
+        elif command == 'arrowUp':
+            params = params.split(' ')
+            if len(params) == 4:
+                x = self.resolve_digit(self.vars, params[0]) 
+                y = self.resolve_digit(self.vars, params[1])
+                sizex = self.resolve_digit(self.vars, params[2])
+                sizey = self.resolve_digit(self.vars, params[3])
+                self.arrowUp(x, y, sizex, sizey)
+        elif command == 'arrowDown':
+            params = params.split(' ')
+            if len(params) == 4:
+                x = self.resolve_digit(self.vars, params[0]) 
+                y = self.resolve_digit(self.vars, params[1])
+                sizex = self.resolve_digit(self.vars, params[2])
+                sizey = self.resolve_digit(self.vars, params[3])
+                self.arrowDown(x, y, sizex, sizey)
+        elif command == 'arrowRight':
+            params = params.split(' ')
+            if len(params) == 4:
+                x = self.resolve_digit(self.vars, params[0]) 
+                y = self.resolve_digit(self.vars, params[1])
+                sizex = self.resolve_digit(self.vars, params[2])
+                sizey = self.resolve_digit(self.vars, params[3])
+                self.arrowRight(x, y, sizex, sizey)
+        elif command == 'arrowLeft':
+            params = params.split(' ')
+            if len(params) == 4:
+                x = self.resolve_digit(self.vars, params[0]) 
+                y = self.resolve_digit(self.vars, params[1])
+                sizex = self.resolve_digit(self.vars, params[2])
+                sizey = self.resolve_digit(self.vars, params[3])
+                self.arrowLeft(x, y, sizex, sizey)
+                
         elif command == 'fill':
             self.fill(params)
             
@@ -142,7 +195,7 @@ border-top-right-radius:{}px;border-top-left-radius:{}px;\
                 var_value = self.resolve_digit(self.vars, params[1]) 
                 var_name = params[0]
                 self.vars[var_name] = var_value
-                print(self.vars)
+                # print(self.vars)
             else:
                 print('wrong assignment format')
              

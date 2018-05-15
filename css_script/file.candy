@@ -1,20 +1,22 @@
 # roundRect and var
 
-fill #eee
-rect 10 0 100 10
 
-set height 30
-set width 20
-set y 10
-set r 15
+fill orange
 
-fill #ff6464
-roundRect 10 y width height r r 0 0
-fill gray
-roundRect 30 y width height r r 0 0
-fill #ff6464
-roundRect 50 y width height r r 0 0
-fill gray
-roundRect 70 y width height r r 0 0
-fill #ff6464
-roundRect 90 y width height r r 0 0
+set x 10
+
++ draw_it
+arrowUp x 50 30 100
+arrowDown x 10 30 100
+
+call draw_it
+set x 50
+call draw_it
+set x 90
+call draw_it
+set x 130
+call draw_it
+set x 170
+call draw_it
+set x 210
+call draw_it
