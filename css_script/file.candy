@@ -1,22 +1,18 @@
-# roundRect and var
+# functions and arrows
 
+set erase_width 50
 
+fill pink
+roundRect 200 200 erase_width 20 0 0 5 0
 fill orange
+rect 200 220 erase_width 20
+rotate 20
+fill green
+roundRect 200 240 erase_width 20 5 0 0 0
 
-set x 10
+rotate 0
 
-+ draw_it
-arrowUp x 50 30 100
-arrowDown x 10 30 100
+fill yellow
+rect 190 200 10 60
 
-call draw_it
-set x 50
-call draw_it
-set x 90
-call draw_it
-set x 130
-call draw_it
-set x 170
-call draw_it
-set x 210
-call draw_it
+

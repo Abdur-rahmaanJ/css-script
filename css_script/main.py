@@ -24,6 +24,8 @@ class CssScript:
         # TODO : add paramters to funcs verify '3'.isdigit()
         self.output = open('output.html', 'w+')
         self.bg_col = 'black'
+        self.rotation = '0'
+        
         self.X = ''
         self.Y = ''
         
@@ -42,8 +44,8 @@ class CssScript:
         self.output.write(x)
 
     def elem(self, x, y, styles, classes='', content=''):
-        return '    <div style="position:absolute;left:{}px;top:{}px;{}" class=" {}">{}</div>\n'.format(x, 
-                                    y, styles, classes, content)
+        return '    <div style="position:absolute;left:{}px;top:{}px;transform:rotate({}deg);\
+{}" class=" {}">{}</div>\n'.format(x, y, self.rotation, styles, classes, content)
 
     def circle(self, x, y, width, height):
         self.out(
@@ -100,6 +102,9 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 
     def fill(self, x):
         self.bg_col = x
+        
+    def rotate(self, x):
+        self.rotation = x
         
     def resolve_digit(self, registry, value):
         '''
@@ -182,6 +187,9 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 
         elif command == 'fill':
             self.fill(params)
+            
+        elif command == 'rotate':
+            self.rotate(params)
             
         elif command == 'text':
             params = params.split(' ')
