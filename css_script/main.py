@@ -5,6 +5,9 @@
  
 class CssScript:
     def __init__(self, source):
+        #
+        #   HTML TEMPLATES PARTS
+        #
         self.header = """
 <!DOCTYPE html>
 <html>
@@ -23,29 +26,55 @@ class CssScript:
         """
         # TODO : add paramters to funcs verify '3'.isdigit()
         self.output = open('output.html', 'w+')
+        
+        #
+        #   SHAPE GLOBAL PROPERTIES
+        #
         self.bg_col = 'black'
-        self.rotation = '0'
+        self.rotation = 0
+        self.translation = 0
         
         self.X = ''
         self.Y = ''
         
+        #
+        #   REGISTRIES
+        #
         self.funcs = {0:1}
         self.vars = {0:1}
         
         self.source = open(source, 'r')
         
+        #
+        #   FLAGS
+        #
         self.funcpass = False
         self.glass = ''
         self.ongoing_func = ''
         
         self.line = 1
         
+    #
+    #   OUTPUT
+    #
+        
     def out(self, x):
         self.output.write(x)
-
+        
+    #
+    #   BASE ELEMENT
+    #
     def elem(self, x, y, styles, classes='', content=''):
         return '    <div style="position:absolute;left:{}px;top:{}px;transform:rotate({}deg);\
 {}" class=" {}">{}</div>\n'.format(x, y, self.rotation, styles, classes, content)
+
+    #
+    #   DERIVED ELEMENTS
+    #
+    
+    #
+    # BASICS
+    #
 
     def circle(self, x, y, width, height):
         self.out(
@@ -66,6 +95,10 @@ border-top-right-radius:{}px;border-top-left-radius:{}px;\
                 '.format(width, 
                 height, self.bg_col, br, bl, tr, tl))
             )
+                
+    #
+    # SPECIFIC SHAPES - ARROWS
+    #
                 
     def arrowUp(self, x, y, width, height):
         self.out(
@@ -94,11 +127,22 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
 transparent;border-bottom: {}px solid transparent;border-right: {}px \
 solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
             )
+    #
+    # SPECIFIC SHAPES - OTHERS
+    #
                 
+    #
+    #   TEXT
+    #
+    
     def text(self, x, y, text):
         self.out(
                 self.elem(x, y, 'color:{};'.format(self.bg_col), content=text)
             )
+        
+    # 
+    #   GLOBAL PROPERTIES
+    #
                 
     def fill(self, x):
         self.bg_col = x
@@ -118,7 +162,10 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 return registry[value]
             except KeyError:
                 return None
-        
+    
+    #
+    #   INDEPENDENT KEYWORD PARSE
+    #
     def parse(self, command, params):
         # TODO : add registry parameter to use in both local and func context
         if command == 'circle':
@@ -206,7 +253,10 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 # print(self.vars)
             else:
                 print('wrong assignment format')
-             
+                
+    #
+    #   NON-WORD KEYWORD PARSE AND FLAGS
+    #
     def passover(self, source):
         for l in source.readlines():
             #print(self.funcs)
@@ -244,7 +294,10 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 command = line[0]
                 params = line[1]
                 self.parse(command, params)        
-             
+    
+    #
+    #   ABSTRACTED METHODS
+    #         
     def init(self):
         self.output.write(self.header)
         print('begun')
@@ -255,14 +308,13 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
         self.output.close()
         print('ended')
         
+    #
+    #   CALLABLE METHOD
+    #
     def exec(self):
         self.init()
         self.passover(self.source)
         self.end()
-
-   
-#def style(type, content):
-#    return '{type_}\n{{  {content_}}}'.format(type_=type, content_=content)
 
 script = CssScript('file.candy')
 script.exec()

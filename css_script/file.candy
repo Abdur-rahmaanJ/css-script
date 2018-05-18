@@ -12,7 +12,7 @@ roundRect 200 240 erase_width 20 5 0 0 0
 
 rotate 0
 
-fill yellow
+ fill yellow
 rect 190 200 10 60
 
 
