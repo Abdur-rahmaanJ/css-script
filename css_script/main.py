@@ -51,9 +51,23 @@ class CssScript:
         #   FLAGS
         #
         self.funcpass = False
-        self.glass = ''
-        self.ongoing_func = ''
+        self.looppass = False
         
+        #
+        #   ONGOING DATA
+        #
+        self.ongoing_func = ''
+        self.ongoing_loop_times = ''
+        
+        #
+        #   ONGOING BODIES
+        #
+        self.glass = ''
+        self.loopbody = ''
+        
+        #
+        #   COUNTS
+        #
         self.line = 1
         
     #
@@ -173,6 +187,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
     #
     def parse(self, registry, command, params):
         # TODO : add registry parameter to use in both local and func context
+        params = params.strip()
         if command == 'circle':
             params = params.split(' ')
             if len(params) == 4:
@@ -285,6 +300,8 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
             # print(self.vars)
             if self.funcpass == True: # before to not include + line
                 self.glass += l
+            if self.looppass == True: # before to not include + line
+                self.loopbody += l
                 
             if l == '\n':
                 if self.funcpass == True:
@@ -294,7 +311,16 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                     self.funcpass = False
                     self.ongoing_func = ''
                     print(self.glass)
+                if self.looppass == True:
+                    for i in range(int(self.ongoing_loop_times)):
+                        for line in self.loopbody.strip('\n').split('\n'):
+                            x = line.strip('\n').split(' ', 1)
+                            self.parse( self.vars, x[0], x[1])
+                    self.ongoing_loop_times = ''
+                    self.looppass = False
+                    self.loopbody = ''
                 continue
+            
             elif l[0] == '#':
                 continue
             elif l[0] == '+':
@@ -313,6 +339,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                     self.funcs[fname] = {'params':params, 'body':''}
                     
             elif l.split(' ', 1)[0] == 'call':
+                # TODO add resolve-digits to parameters of funcs
                 wds = l.strip('\n').split(' ')
                 fname = wds[1]
                 # TODO : ADD A READ STR FUNC INSTEAD OF READLINE
@@ -333,6 +360,10 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 except KeyError:
                     print('no such func exists')
                     
+            elif l[:4] == 'loop':
+                wds = l.strip('\n').split(' ')
+                self.looppass = True
+                self.ongoing_loop_times = wds[1]
             if self.funcpass == False:
                 line = l.strip('\n').split(' ', 1)
                 command = line[0]
