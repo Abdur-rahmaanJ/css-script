@@ -2,6 +2,8 @@
 """
             CSS SCRIPT 
 """
+
+from collections import OrderedDict
  
 class CssScript:
     def __init__(self, source):
@@ -150,6 +152,9 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
     def rotate(self, x):
         self.rotation = x
         
+    #
+    #   RESOLVE VALUE
+    #
     def resolve_digit(self, registry, value):
         '''
         checks if value is digit or if variable, fetches it's value
@@ -166,70 +171,70 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
     #
     #   INDEPENDENT KEYWORD PARSE
     #
-    def parse(self, command, params):
+    def parse(self, registry, command, params):
         # TODO : add registry parameter to use in both local and func context
         if command == 'circle':
             params = params.split(' ')
             if len(params) == 4:
-                x = self.resolve_digit(self.vars, params[0])
-                y = self.resolve_digit(self.vars, params[1])
-                sizex = self.resolve_digit(self.vars, params[2])
-                sizey = self.resolve_digit(self.vars, params[3])
+                x = self.resolve_digit(registry, params[0])
+                y = self.resolve_digit(registry, params[1])
+                sizex = self.resolve_digit(registry, params[2])
+                sizey = self.resolve_digit(registry, params[3])
                 self.circle(x, y, sizex, sizey)
                 
         elif command == 'rect':
             params = params.split(' ')
             if len(params) == 4:
-                x = self.resolve_digit(self.vars, params[0]) 
-                y = self.resolve_digit(self.vars, params[1])
-                sizex = self.resolve_digit(self.vars, params[2])
-                sizey = self.resolve_digit(self.vars, params[3])
+                x = self.resolve_digit(registry, params[0]) 
+                y = self.resolve_digit(registry, params[1])
+                sizex = self.resolve_digit(registry, params[2])
+                sizey = self.resolve_digit(registry, params[3])
                 self.rect(x, y, sizex, sizey)
                 
         elif command == 'roundRect':
             params = params.split(' ')
             if len(params) == 8:
-                x = self.resolve_digit(self.vars, params[0]) 
-                y = self.resolve_digit(self.vars, params[1])
-                sizex = self.resolve_digit(self.vars, params[2])
-                sizey = self.resolve_digit(self.vars, params[3])
-                br = self.resolve_digit(self.vars, params[4])
-                bl = self.resolve_digit(self.vars, params[5])
-                tr = self.resolve_digit(self.vars, params[6])
-                tl = self.resolve_digit(self.vars, params[7])
+                x = self.resolve_digit(registry, params[0]) 
+                y = self.resolve_digit(registry, params[1])
+                sizex = self.resolve_digit(registry, params[2])
+                sizey = self.resolve_digit(registry, params[3])
+                br = self.resolve_digit(registry, params[4])
+                bl = self.resolve_digit(registry, params[5])
+                tr = self.resolve_digit(registry, params[6])
+                tl = self.resolve_digit(registry, params[7])
                 self.roundRect(x, y, sizex, sizey,  br, bl, tr, tl)
                 
         elif command == 'arrowUp':
             params = params.split(' ')
             if len(params) == 4:
-                x = self.resolve_digit(self.vars, params[0]) 
-                y = self.resolve_digit(self.vars, params[1])
-                sizex = self.resolve_digit(self.vars, params[2])
-                sizey = self.resolve_digit(self.vars, params[3])
+                x = self.resolve_digit(registry, params[0]) 
+                y = self.resolve_digit(registry, params[1])
+                sizex = self.resolve_digit(registry, params[2])
+                sizey = self.resolve_digit(registry, params[3])
                 self.arrowUp(x, y, sizex, sizey)
         elif command == 'arrowDown':
             params = params.split(' ')
             if len(params) == 4:
-                x = self.resolve_digit(self.vars, params[0]) 
-                y = self.resolve_digit(self.vars, params[1])
-                sizex = self.resolve_digit(self.vars, params[2])
-                sizey = self.resolve_digit(self.vars, params[3])
+                x = self.resolve_digit(registry, params[0]) 
+                y = self.resolve_digit(registry, params[1])
+                sizex = self.resolve_digit(registry, params[2])
+                sizey = self.resolve_digit(registry, params[3])
                 self.arrowDown(x, y, sizex, sizey)
         elif command == 'arrowRight':
             params = params.split(' ')
             if len(params) == 4:
-                x = self.resolve_digit(self.vars, params[0]) 
-                y = self.resolve_digit(self.vars, params[1])
-                sizex = self.resolve_digit(self.vars, params[2])
-                sizey = self.resolve_digit(self.vars, params[3])
+                x = self.resolve_digit(registry, params[0]) 
+                y = self.resolve_digit(registry, params[1])
+                sizex = self.resolve_digit(registry, params[2])
+                sizey = self.resolve_digit(registry, params[3])
                 self.arrowRight(x, y, sizex, sizey)
         elif command == 'arrowLeft':
             params = params.split(' ')
             if len(params) == 4:
-                x = self.resolve_digit(self.vars, params[0]) 
-                y = self.resolve_digit(self.vars, params[1])
-                sizex = self.resolve_digit(self.vars, params[2])
-                sizey = self.resolve_digit(self.vars, params[3])
+                x = self.resolve_digit(registry, params[0]) 
+                y = self.resolve_digit(registry, params[1])
+                sizex = self.resolve_digit(registry, params[2])
+                sizey = self.resolve_digit(registry, params[3])
                 self.arrowLeft(x, y, sizex, sizey)
                 
         elif command == 'fill':
@@ -240,14 +245,14 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
             
         elif command == 'text':
             params = params.split(' ')
-            x = self.resolve_digit(self.vars, params[0])
-            y = self.resolve_digit(self.vars, params[1])
+            x = self.resolve_digit(registry, params[0])
+            y = self.resolve_digit(registry, params[1])
             self.text(x, y, ' '.join(params[2:]))
             
         elif command == 'set':
             params = params.split(' ')
             if len(params) == 2 and params[0].isdigit() == False:
-                var_value = self.resolve_digit(self.vars, params[1]) 
+                var_value = self.resolve_digit(registry, params[1]) 
                 var_name = params[0]
                 self.vars[var_name] = var_value
                 # print(self.vars)
@@ -259,7 +264,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
     #
     def passover(self, source):
         for l in source.readlines():
-            #print(self.funcs)
+            # print(self.vars)
             if self.funcpass == True: # before to not include + line
                 self.glass += l
                 
@@ -275,25 +280,47 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
             elif l[0] == '#':
                 continue
             elif l[0] == '+':
+                wds = l.strip('\n').split(' ')
                 self.funcpass = True
-                fname = l.strip('\n').split(' ', 1)[1].strip()
-                self.funcs[fname] = {'params':{}, 'body':''}
+                fname = wds[1].strip()
                 self.ongoing_func = fname
-                print(fname.replace('\n','#'))
+                if len(wds) == 2:
+                    self.funcs[fname] = {'params':None, 'body':''}
+                    # print(fname.replace('\n','#'))
+                elif len(wds) > 2:
+                    param_names = wds[2:]
+                    params = OrderedDict()
+                    for p in param_names:
+                        params[p] = None
+                    self.funcs[fname] = {'params':params, 'body':''}
+                    
             elif l.split(' ', 1)[0] == 'call':
-                fname = l.strip('\n').split(' ', 1)[1].strip()
+                wds = l.strip('\n').split(' ')
+                fname = wds[1]
                 # TODO : ADD A READ STR FUNC INSTEAD OF READLINE
                 try:
-                    for line in self.funcs[fname]['body'].strip('\n').split('\n'):
-                        x = line.strip('\n').split(' ', 1)
-                        self.parse(x[0], x[1])
+                    if self.funcs[fname]['params'] == None:
+                        for line in self.funcs[fname]['body'].strip('\n').split('\n'):
+                            x = line.strip('\n').split(' ', 1)
+                            self.parse( self.vars, x[0], x[1])
+                    else:
+                        params = wds[2:]
+                        i = 0
+                        for key in self.funcs[fname]['params']:
+                            print(key)
+                            self.funcs[fname]['params'][key] = params[i]
+                            i += 1
+                        for line in self.funcs[fname]['body'].strip('\n').split('\n'):
+                            x = line.strip('\n').split(' ', 1)
+                            self.parse( self.funcs[fname]['params'], x[0], x[1])
                 except KeyError:
                     print('no such func exists')
+                    
             if self.funcpass == False:
                 line = l.strip('\n').split(' ', 1)
                 command = line[0]
                 params = line[1]
-                self.parse(command, params)        
+                self.parse(self.vars, command, params)        
     
     #
     #   ABSTRACTED METHODS
@@ -316,8 +343,9 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
         self.passover(self.source)
         self.end()
 
-script = CssScript('file.candy')
-script.exec()
+if __name__ == '__main__':
+    script = CssScript('file.candy')
+    script.exec()
     
 
 
