@@ -15,11 +15,11 @@ rotate 0
 fill yellow
 rect 190 200 10 60
 
-set x 3
+set xc 3
 
-#
+# operate x + 3
 # + draw x y z
-#
+# loop 3
 #
 #
 #
@@ -34,5 +34,19 @@ rect x y 10 10
 
 fill green
 call draww 500 20
+
++ ddd
+rect xc 20 50 50
+
+do + 60 to xc
+call ddd
+do + 60 to xc
+call ddd
+do + 60 to xc
+call ddd
+do + 60 to xc
+call ddd
+do + 60 to xc
+call ddd
 
 

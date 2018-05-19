@@ -249,6 +249,9 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
             y = self.resolve_digit(registry, params[1])
             self.text(x, y, ' '.join(params[2:]))
             
+        #
+        #   VAL MODIFS
+        #
         elif command == 'set':
             params = params.split(' ')
             if len(params) == 2 and params[0].isdigit() == False:
@@ -258,6 +261,21 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 # print(self.vars)
             else:
                 print('wrong assignment format')
+                
+        elif command == 'do':
+            params = params.split(' ')
+            op = params[0]
+            val = params[1]
+            var = params[3]
+            if params[2] == 'to':
+                if op == '+':
+                    registry[var] = int(registry[var]) + int(val)
+                if op == '-':
+                    registry[var] = int(registry[var]) - int(val)
+                if op == '*':
+                    registry[var] = int(registry[var]) * int(val)
+                if op == '/':
+                    registry[var] = int(registry[var]) // int(val)
                 
     #
     #   NON-WORD KEYWORD PARSE AND FLAGS
@@ -307,7 +325,6 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                         params = wds[2:]
                         i = 0
                         for key in self.funcs[fname]['params']:
-                            print(key)
                             self.funcs[fname]['params'][key] = params[i]
                             i += 1
                         for line in self.funcs[fname]['body'].strip('\n').split('\n'):
