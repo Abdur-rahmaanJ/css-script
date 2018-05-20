@@ -20,7 +20,7 @@ class CssScript:
 </head>
 <body>
 <div style="position:relative;">
-        """
+"""
         self.footer = """
 </div>
 </body>

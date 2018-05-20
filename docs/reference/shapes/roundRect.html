@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../../ProtoTyp/prototyp.min.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html"><div class="bgorange4">home</div></a>
+        <a href="../index.html"><div class="bgorange4">reference</div></a>
+        <a href="https://github.com/abdur-rahmaanj/css-script"><div class="bgorange4">github</div></a>
+    </nav>
+    <main class="c">
+    <div class="sec">
+        <div>
+            <div class="sec_title bggreen4 c cwhite" >shapes</div>
+        </div>
+        <div>
+            <div class="sec_command">rect</div>
+        </div>
+        <div>
+            <div class="sec_notes">rect defines a sharp cornered rectangle</div>
+        </div>
+        <div>
+            <div class="sec_params">rect | x | y | sizex | sizey | bottom right corner | bottom left corner | top right corner | top left corner |</div>
+            <ul>
+                <li>x / x position on screen</li>
+                <li>y / y position on screen</li>
+                <li>sizex / size in the x-axis direction</li>
+                <li>sizey / size in the y-axis direction</li>
+                <li>bottom right corner / bottom right corner radius</li>
+                <li>bottom left corner / bottom left corner radius</li>
+                <li>top right corner / top right corner radius</li>
+                <li>top left corner / bottom left corner radius</li>
+            </ul>
+        </div>
+        <div>
+            <div class="sec_code">
+<pre>
+fill orange
+
+# bottom right corner
+roundRect 10 10 50 50 10 0 0 0
+
+# bottom left corner
+roundRect 70 10 50 50 0 10 0 0
+
+# top right corner
+roundRect 130 10 50 50 0 0 10 0
+
+# top left corner
+roundRect 190 10 50 50 0 0 0 10
+</pre>
+            </div>
+            <div class="sec_output">
+    <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:50px;height:50px;background-color:orange;border-bottom-right-radius:10px;border-bottom-left-radius:0px;border-top-right-radius:0px;border-top-left-radius:0px;                " class=" "></div>
+    <div style="position:absolute;left:70px;top:10px;transform:rotate(0deg);width:50px;height:50px;background-color:orange;border-bottom-right-radius:0px;border-bottom-left-radius:10px;border-top-right-radius:0px;border-top-left-radius:0px;                " class=" "></div>
+    <div style="position:absolute;left:130px;top:10px;transform:rotate(0deg);width:50px;height:50px;background-color:orange;border-bottom-right-radius:0px;border-bottom-left-radius:0px;border-top-right-radius:10px;border-top-left-radius:0px;                " class=" "></div>
+    <div style="position:absolute;left:190px;top:10px;transform:rotate(0deg);width:50px;height:50px;background-color:orange;border-bottom-right-radius:0px;border-bottom-left-radius:0px;border-top-right-radius:0px;border-top-left-radius:10px;                " class=" "></div>
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

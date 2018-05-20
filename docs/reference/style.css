@@ -1,0 +1,54 @@
+
+a{
+    text-decoration-color: black;
+    color: black;
+}
+nav{
+    text-align: center;
+    height: 100px;
+}
+nav a{
+    display: inline-block;
+    text-decoration: none;
+}
+nav a div{
+    width: 100px;
+    padding: 5px; color: white;
+}
+.sec{
+    width:300px; display: inline-block;
+}
+.sec_title{
+    text-transform: uppercase;
+    padding: 5px; margin:5px;
+    width: 225px; height: 25px;
+    border-radius: 3px;
+    line-height: 25px;
+    display:inline-block;
+}
+.sec_command{
+    padding: 5px; margin:5px;
+    border: 3px dashed #e6007e;
+    border-top: none;
+    width: 250px;
+    display:inline-block;
+}
+
+.sec_notes{
+    padding: 10px;
+}
+
+.sec_code{
+    background-color: black;
+    color: white;
+    font-family: cursive;
+    padding: 10px;
+}
+.sec_code pre{
+    text-align: left;
+}
+.sec_output{
+    position: relative;
+    min-height: 100px;
+    background-color: #ddd;
+}
