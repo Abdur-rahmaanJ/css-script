@@ -10,6 +10,21 @@ h2{
 h3{
     color: green;
 }
+a{
+    text-decoration: none; 
+    display: inline-block;
+}
+nav{
+    text-align: center;
+}
+nav a div{
+    padding: 5px; color: white; width: 100px;
+}
+header{
+    margin:5px; width:300px; padding: 10px;
+    border: 5px dashed #e6007e;
+    border-radius: 10px;
+}
 .syntax{
     margin: 5px; padding: 10px;
     margin-bottom: 0px;
