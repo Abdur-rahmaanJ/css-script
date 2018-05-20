@@ -1,11 +1,13 @@
-
+body{
+    background-color: #F1F1F1;
+}
 a{
     text-decoration-color: black;
     color: black;
 }
 nav{
     text-align: center;
-    height: 100px;
+    height: 70px;
 }
 nav a{
     display: inline-block;
@@ -14,6 +16,10 @@ nav a{
 nav a div{
     width: 100px;
     padding: 5px; color: white;
+}
+
+footer{
+    height: 100px;
 }
 .sec{
     width:300px; display: inline-block;
@@ -32,6 +38,8 @@ nav a div{
     border-top: none;
     width: 250px;
     display:inline-block;
+    background-color: white;
+    box-shadow: 0 5px 10px black;
 }
 
 .sec_notes{
@@ -51,4 +59,10 @@ nav a div{
     position: relative;
     min-height: 100px;
     background-color: #ddd;
+}
+
+.credits{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }
