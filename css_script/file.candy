@@ -7,6 +7,9 @@ do / 2 to size
 fill rgba(0,255,0,0.3)
 rect 10 10 size size
 
+fill black
+show 100 10 size
+
 
 
 

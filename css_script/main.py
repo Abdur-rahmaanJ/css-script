@@ -291,6 +291,18 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                     registry[var] = int(registry[var]) * int(val)
                 if op == '/':
                     registry[var] = int(registry[var]) // int(val)
+        
+        #
+        #   DENUG / SHOW
+        #
+        elif  command == 'show':
+            params = params.split(' ')
+            try:
+                x = self.resolve_digit(registry, params[0])
+                y = self.resolve_digit(registry, params[1])
+                self.text(x, y, registry[params[2]])
+            except KeyError:
+                print('key undefined')
                 
     #
     #   NON-WORD KEYWORD PARSE AND FLAGS
