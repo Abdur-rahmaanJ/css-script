@@ -15,33 +15,36 @@
     <main class="c">
     <div class="sec">
         <div>
-            <div class="sec_title bggreen4 c cwhite" >shapes</div>
+            <div class="sec_title bggreen4 c cwhite" >structures</div>
         </div>
         <div>
-            <div class="sec_command">rect</div>
+            <div class="sec_command">variable - set</div>
         </div>
         <div>
-            <div class="sec_notes">rect defines a sharp cornered rectangle</div>
+            <div class="sec_notes">defines a variable</div>
         </div>
         <div>
-            <div class="sec_params">rect | x | y | sizex | sizey</div>
+            <div class="sec_params">set | variable-name | variable-value</div>
             <ul>
-                <li>x / x position on screen</li>
-                <li>y / y position on screen</li>
-                <li>sizex / size in the x-axis direction</li>
-                <li>sizey / size in the y-axis direction</li>
+                <li>variable-name / the name of the variable</li>
+                <li>variable-value / the value of the variable</li>
             </ul>
         </div>
         <div>
             <div class="sec_code">
 <pre>
-fill orange
-rect 10 10 200 30
+set x 10
+set y 10
+set size_x 50
+set size_y 60
+
+fill rgb(100,100,100)
+rect x y size_x size_y
 
 </pre>
             </div>
             <div class="sec_output">
-                <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:200px;height:30px;background-color:orange;" class=" "></div>
+    <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:50px;height:60px;background-color:rgb(100,100,100);" class=" "></div
             </div>
         </div>
     </div>

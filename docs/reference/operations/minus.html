@@ -15,33 +15,46 @@
     <main class="c">
     <div class="sec">
         <div>
-            <div class="sec_title bggreen4 c cwhite" >shapes</div>
+            <div class="sec_title bggreen4 c cwhite" >operations</div>
         </div>
         <div>
-            <div class="sec_command">rect</div>
+            <div class="sec_command">minus</div>
         </div>
         <div>
-            <div class="sec_notes">rect defines a sharp cornered rectangle</div>
+            <div class="sec_notes">remove from the variable</div>
         </div>
         <div>
-            <div class="sec_params">rect | x | y | sizex | sizey</div>
+            <div class="sec_params">do - to var</div>
             <ul>
-                <li>x / x position on screen</li>
-                <li>y / y position on screen</li>
-                <li>sizex / size in the x-axis direction</li>
-                <li>sizey / size in the y-axis direction</li>
+                <li>- / minus</li>
+                <li>var / variable name</li>
             </ul>
         </div>
         <div>
             <div class="sec_code">
 <pre>
 fill orange
-rect 10 10 200 30
+
+set size 100
+
+rect 10 10 size size
+do - 10 to size
+
+fill red
+rect 10 10 size size
+do - 10 to size
+
+fill green
+rect 10 10 size size
+do - 10 to size
+
 
 </pre>
             </div>
             <div class="sec_output">
-                <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:200px;height:30px;background-color:orange;" class=" "></div>
+    <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:100px;height:100px;background-color:orange;" class=" "></div>
+    <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:90px;height:90px;background-color:red;" class=" "></div>
+    <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:80px;height:80px;background-color:green;" class=" "></div>
             </div>
         </div>
     </div>

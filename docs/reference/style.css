@@ -57,10 +57,11 @@ footer{
 }
 .sec_code pre{
     text-align: left;
+    overflow-x:scroll;
 }
 .sec_output{
     position: relative;
-    min-height: 100px;
+    min-height: 200px;
     background-color: #ddd;
 }
 

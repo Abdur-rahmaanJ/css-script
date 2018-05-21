@@ -1,78 +1,11 @@
 fill orange
 
-# bottom right
-roundRect 10 10 50 50 10 0 0 0
+set size 100
+rect 10 10 size size
 
-# bottom left
-roundRect 70 10 50 50 0 10 0 0
-
-# top right
-roundRect 130 10 50 50 0 0 10 0
-
-# top left
-roundRect 190 10 50 50 0 0 0 10
-
-# functions and arrows
-
-#set erase_width 50
-
-#fill pink
-#roundRect 200 200 erase_width 20 0 0 5 0
-#fill orange
-#rect 200 220 erase_width 20
-#rotate 20
-#fill green
-#roundRect 200 240 erase_width 20 5 0 0 0
-
-#rotate 0
-
-#fill yellow
-#rect 190 200 10 60
-
-#set xc 3
-
-# operate x + 3
-# + draw x y z
-# loop 3
-# 
-#
-#
-#
-#
-#
-#
-#
-
-# + draww x y
-# rect x y 10 10
-
-# fill green
-# call draww 500 20
-
-# + ddd
-# rect xc 20 50 50
-
-# fill blue
-
-#set z 7
-#fill blue
-
-#loop 10
-#do + 60 to z
-#rect z 70 40 40 
-
-#set i 10
-
-#loop 10
-#do + 20 to i
-#circle i 10 30 30 
-
-#set i 200
-
-#loop 100
-#do - 1 to i
-#fill rgba(200,0,0,0.1)
-#rect 20 20 i i
+do / 2 to size
+fill rgba(0,255,0,0.3)
+rect 10 10 size size
 
 
 

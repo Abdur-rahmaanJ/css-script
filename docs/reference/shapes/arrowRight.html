@@ -18,30 +18,35 @@
             <div class="sec_title bggreen4 c cwhite" >shapes</div>
         </div>
         <div>
-            <div class="sec_command">rect</div>
+            <div class="sec_command">arrowRight</div>
         </div>
         <div>
-            <div class="sec_notes">rect defines a sharp cornered rectangle</div>
+            <div class="sec_notes">right pointing triangle</div>
         </div>
         <div>
-            <div class="sec_params">rect | x | y | sizex | sizey</div>
+            <div class="sec_params">arrowright | x | y | width | height</div>
             <ul>
                 <li>x / x position on screen</li>
                 <li>y / y position on screen</li>
-                <li>sizex / size in the x-axis direction</li>
-                <li>sizey / size in the y-axis direction</li>
+                <li>width / width of  base</li>
+                <li>height / height of triangle</li>
             </ul>
         </div>
         <div>
             <div class="sec_code">
 <pre>
 fill orange
-rect 10 10 200 30
+
+arrowRight 10 10 30 50
+arrowRight 10 40 100 50
+arrowRight 10 140 50 100
 
 </pre>
             </div>
             <div class="sec_output">
-                <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:200px;height:30px;background-color:orange;" class=" "></div>
+    <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width: 0;height: 0;border-top: 15.0px solid transparent;border-bottom: 15.0px solid transparent;border-left: 50px solid orange;" class=" "></div>
+    <div style="position:absolute;left:10px;top:40px;transform:rotate(0deg);width: 0;height: 0;border-top: 50.0px solid transparent;border-bottom: 50.0px solid transparent;border-left: 50px solid orange;" class=" "></div>
+    <div style="position:absolute;left:10px;top:140px;transform:rotate(0deg);width: 0;height: 0;border-top: 25.0px solid transparent;border-bottom: 25.0px solid transparent;border-left: 100px solid orange;" class=" "></div>
             </div>
         </div>
     </div>

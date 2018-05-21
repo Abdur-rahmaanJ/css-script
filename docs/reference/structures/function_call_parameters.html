@@ -15,33 +15,42 @@
     <main class="c">
     <div class="sec">
         <div>
-            <div class="sec_title bggreen4 c cwhite" >shapes</div>
+            <div class="sec_title bggreen4 c cwhite" >structures</div>
         </div>
         <div>
-            <div class="sec_command">rect</div>
+            <div class="sec_command">function call</div>
         </div>
         <div>
-            <div class="sec_notes">rect defines a sharp cornered rectangle</div>
+            <div class="sec_notes">calls a function</div>
         </div>
         <div>
-            <div class="sec_params">rect | x | y | sizex | sizey</div>
+            <div class="sec_params">call | function-name | *params functions are ended by the next new line</div>
             <ul>
-                <li>x / x position on screen</li>
-                <li>y / y position on screen</li>
-                <li>sizex / size in the x-axis direction</li>
-                <li>sizey / size in the y-axis direction</li>
+                <li>function-name / the name of the function</li>
+                <li>*params / params defined by the user</li>
             </ul>
         </div>
         <div>
             <div class="sec_code">
 <pre>
-fill orange
-rect 10 10 200 30
++ square x y size
+rect x y size size
+
+fill red
+call square 20 20 50
+
+fill blue
+call square 80 20 50
+
+fill green
+call square 140 20 50
 
 </pre>
             </div>
             <div class="sec_output">
-                <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:200px;height:30px;background-color:orange;" class=" "></div>
+    <div style="position:absolute;left:20px;top:20px;transform:rotate(0deg);width:50px;height:50px;background-color:red;" class=" "></div>
+    <div style="position:absolute;left:80px;top:20px;transform:rotate(0deg);width:50px;height:50px;background-color:blue;" class=" "></div>
+    <div style="position:absolute;left:140px;top:20px;transform:rotate(0deg);width:50px;height:50px;background-color:green;" class=" "></div>
             </div>
         </div>
     </div>

@@ -15,33 +15,46 @@
     <main class="c">
     <div class="sec">
         <div>
-            <div class="sec_title bggreen4 c cwhite" >shapes</div>
+            <div class="sec_title bggreen4 c cwhite" >transformations</div>
         </div>
         <div>
-            <div class="sec_command">rect</div>
+            <div class="sec_command">rotate</div>
         </div>
         <div>
-            <div class="sec_notes">rect defines a sharp cornered rectangle</div>
+            <div class="sec_notes">rotate the specified number of degrees</div>
         </div>
         <div>
-            <div class="sec_params">rect | x | y | sizex | sizey</div>
+            <div class="sec_params">rotate | deg</div>
             <ul>
-                <li>x / x position on screen</li>
-                <li>y / y position on screen</li>
-                <li>sizex / size in the x-axis direction</li>
-                <li>sizey / size in the y-axis direction</li>
+                <li>deg / angle in degrees</li>
             </ul>
         </div>
         <div>
             <div class="sec_code">
 <pre>
+fill maroon
+rotate 90
+rect 50 50 100 20
+
+fill green
+rotate 120
+rect 50 50 100 20
+
 fill orange
-rect 10 10 200 30
+rotate 0
+rect 50 50 100 20
+
+fill pink
+rotate 210
+rect 50 50 100 20
 
 </pre>
             </div>
             <div class="sec_output">
-                <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:200px;height:30px;background-color:orange;" class=" "></div>
+    <div style="position:absolute;left:50px;top:50px;transform:rotate(90deg);width:100px;height:20px;background-color:maroon;" class=" "></div>
+    <div style="position:absolute;left:50px;top:50px;transform:rotate(120deg);width:100px;height:20px;background-color:green;" class=" "></div>
+    <div style="position:absolute;left:50px;top:50px;transform:rotate(0deg);width:100px;height:20px;background-color:orange;" class=" "></div>
+    <div style="position:absolute;left:50px;top:50px;transform:rotate(210deg);width:100px;height:20px;background-color:pink;" class=" "></div>
             </div>
         </div>
     </div>

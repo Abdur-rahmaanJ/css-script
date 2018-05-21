@@ -15,33 +15,39 @@
     <main class="c">
     <div class="sec">
         <div>
-            <div class="sec_title bggreen4 c cwhite" >shapes</div>
+            <div class="sec_title bggreen4 c cwhite" >structures</div>
         </div>
         <div>
-            <div class="sec_command">rect</div>
+            <div class="sec_command">function definition</div>
         </div>
         <div>
-            <div class="sec_notes">rect defines a sharp cornered rectangle</div>
+            <div class="sec_notes">defines a function</div>
         </div>
         <div>
-            <div class="sec_params">rect | x | y | sizex | sizey</div>
+            <div class="sec_params">+ | function-name. functions are ended by the next new line</div>
             <ul>
-                <li>x / x position on screen</li>
-                <li>y / y position on screen</li>
-                <li>sizex / size in the x-axis direction</li>
-                <li>sizey / size in the y-axis direction</li>
+                <li>function-name / the name of the function</li>
             </ul>
         </div>
         <div>
             <div class="sec_code">
 <pre>
-fill orange
-rect 10 10 200 30
++ draw_window
+fill gray
+rect 10 10 110 110
+# comment here does not break function definition
+fill #6cbdd0
+rect 20 20 40 40
+rect 70 20 40 40
+rect 20 70 40 40
+rect 70 70 40 40
+
+# call draw_window
 
 </pre>
             </div>
             <div class="sec_output">
-                <div style="position:absolute;left:10px;top:10px;transform:rotate(0deg);width:200px;height:30px;background-color:orange;" class=" "></div>
+
             </div>
         </div>
     </div>
