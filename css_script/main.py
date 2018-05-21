@@ -4,6 +4,7 @@
 """
 
 from collections import OrderedDict
+import random
  
 class CssScript:
     def __init__(self, source):
@@ -176,6 +177,12 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
         '''
         if value.isdigit():
             return value
+        elif '|' in value:
+            wds  = value.split('|')
+            if wds[0] == 'rand' and len(wds) == 3:
+                l = int(wds[1]); h = int(wds[2])
+                return random.randint(l, h)
+                
         else:
             try:
                 return registry[value]

@@ -64,6 +64,12 @@ footer{
     background-color: #ddd;
 }
 
+
+.demo{
+    padding: 5px; margin: 5px;
+}
+
+
 .credits{
     position: fixed;
     bottom: 10px;

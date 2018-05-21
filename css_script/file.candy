@@ -1,15 +1,5 @@
-fill orange
-
-set size 100
-rect 10 10 size size
-
-do / 2 to size
-fill rgba(0,255,0,0.3)
-rect 10 10 size size
-
-fill black
-show 100 10 size
-
+loop 10
+rect  rand|0|100  rand|0|100  30  30
 
 
 
