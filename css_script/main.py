@@ -205,7 +205,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 self.circle(x, y, sizex, sizey)
                 
         elif command == 'rect':
-            params = params.split(' ')
+            params = list(filter((lambda x:x!=''), params.split(' ')))
             if len(params) == 4:
                 x = self.resolve_digit(registry, params[0]) 
                 y = self.resolve_digit(registry, params[1])
@@ -214,7 +214,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 self.rect(x, y, sizex, sizey)
                 
         elif command == 'roundRect':
-            params = params.split(' ')
+            params = list(filter((lambda x:x!=''), params.split(' ')))
             if len(params) == 8:
                 x = self.resolve_digit(registry, params[0]) 
                 y = self.resolve_digit(registry, params[1])
@@ -227,7 +227,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 self.roundRect(x, y, sizex, sizey,  br, bl, tr, tl)
                 
         elif command == 'arrowUp':
-            params = params.split(' ')
+            params = list(filter((lambda x:x!=''), params.split(' ')))
             if len(params) == 4:
                 x = self.resolve_digit(registry, params[0]) 
                 y = self.resolve_digit(registry, params[1])
@@ -235,7 +235,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 sizey = self.resolve_digit(registry, params[3])
                 self.arrowUp(x, y, sizex, sizey)
         elif command == 'arrowDown':
-            params = params.split(' ')
+            params = list(filter((lambda x:x!=''), params.split(' ')))
             if len(params) == 4:
                 x = self.resolve_digit(registry, params[0]) 
                 y = self.resolve_digit(registry, params[1])
@@ -243,7 +243,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 sizey = self.resolve_digit(registry, params[3])
                 self.arrowDown(x, y, sizex, sizey)
         elif command == 'arrowRight':
-            params = params.split(' ')
+            params = list(filter((lambda x:x!=''), params.split(' ')))
             if len(params) == 4:
                 x = self.resolve_digit(registry, params[0]) 
                 y = self.resolve_digit(registry, params[1])
@@ -251,7 +251,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 sizey = self.resolve_digit(registry, params[3])
                 self.arrowRight(x, y, sizex, sizey)
         elif command == 'arrowLeft':
-            params = params.split(' ')
+            params = list(filter((lambda x:x!=''), params.split(' ')))
             if len(params) == 4:
                 x = self.resolve_digit(registry, params[0]) 
                 y = self.resolve_digit(registry, params[1])
@@ -275,7 +275,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
         #   VAL MODIFS
         #
         elif command == 'set':
-            params = params.split(' ')
+            params = list(filter((lambda x:x!=''), params.split(' ')))
             if len(params) == 2 and params[0].isdigit() == False:
                 var_value = self.resolve_digit(registry, params[1]) 
                 var_name = params[0]
@@ -285,7 +285,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 print('wrong assignment format')
                 
         elif command == 'do':
-            params = params.split(' ')
+            params = list(filter((lambda x:x!=''), params.split(' ')))
             op = params[0]
             val = params[1]
             var = params[3]
@@ -303,7 +303,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
         #   DENUG / SHOW
         #
         elif  command == 'show':
-            params = params.split(' ')
+            params = list(filter((lambda x:x!=''), params.split(' ')))
             try:
                 x = self.resolve_digit(registry, params[0])
                 y = self.resolve_digit(registry, params[1])
