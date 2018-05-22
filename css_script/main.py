@@ -45,6 +45,7 @@ class CssScript:
         #
         self.funcs = {0:1}
         self.vars = {0:1}
+        self.colors = {}
         
         self.source = open(source, 'r')
         
@@ -168,7 +169,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
         self.rotation = x
         
     #
-    #   RESOLVE VALUE
+    #   RESOLVE DIGIT VALUE
     #
     def resolve_digit(self, registry, value):
         '''
@@ -283,6 +284,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 # print(self.vars)
             else:
                 print('wrong assignment format')
+        # TODO : ADD COLOUR VARS
                 
         elif command == 'do':
             params = list(filter((lambda x:x!=''), params.split(' ')))

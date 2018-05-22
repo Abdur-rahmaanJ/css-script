@@ -1,5 +1,7 @@
-loop 10
-rect  rand|0|100  rand|0|100  30  30
+loop 100
+fill rgba(200,200,200,0.3)
+rect  rand|0|100  rand|0|100  20  20
+# color xyx
 
 
 
