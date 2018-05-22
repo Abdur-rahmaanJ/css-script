@@ -12,7 +12,7 @@ css script : the script for css shapes
 [here](https://abdur-rahmaanj.github.io/css-script/)
 
 # 📚 docs
-[here](https://abdur-rahmaanj.github.io/css-script/docs.html)
+[here](https://abdur-rahmaanj.github.io/css-script/reference/index.html)
 
 # rights
 all rights reserved cssscript.org, for code see license
