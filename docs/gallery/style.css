@@ -6,6 +6,9 @@ header{
     border: 5px dashed #e6007e;
     border-radius: 10px;
 }
+div{
+    font-family: Raleway;
+}
 a{
     text-decoration-color: black;
     color: black;
