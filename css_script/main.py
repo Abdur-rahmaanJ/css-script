@@ -5,6 +5,7 @@
 
 from collections import OrderedDict
 import random
+import math
  
 class CssScript:
     def __init__(self, source):
@@ -28,7 +29,7 @@ class CssScript:
 </html>
         """
         # TODO : add paramters to funcs verify '3'.isdigit()
-        self.output = open('output.html', 'w+')
+        self.output = open('C:/Users/Dell/Desktop/entry/git/css-script-candy/css_script/output.html', 'w+')
         
         #
         #   SHAPE GLOBAL PROPERTIES
@@ -181,15 +182,34 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
         elif '|' in value:
             wds  = value.split('|')
             if wds[0] == 'rand' and len(wds) == 3:
-                l = int(wds[1]); h = int(wds[2])
+                l = int(self.resolve_digit(registry, wds[1]))
+                h = int(self.resolve_digit(registry, wds[2]))
                 return random.randint(l, h)
-                
+            elif wds[0] == 'sine' and len(wds) == 2:
+                val = int(self.resolve_digit(registry, wds[1]))
+                return math.sin(val)
+            elif wds[0] == 'cos' and len(wds) == 2:
+                val = int(self.resolve_digit(registry, wds[1]))
+                return math.cos(val)
+            elif wds[0] == 'abssine' and len(wds) == 2:
+                val = int(self.resolve_digit(registry, wds[1]))
+                return abs(math.sin(val))      
         else:
             try:
                 return registry[value]
             except KeyError:
                 return None
     
+    def resolve_col(self, registry, value):
+        if '|' in value:
+            wds  = list(filter((lambda x:x!=''), value.split('|')))
+            if wds[0] == 'randCol' and len(wds) == 1:
+                return 'rgb({},{},{})'.format(random.randint(0,255),
+                            random.randint(0,255), random.randint(0,255)
+                            )
+        else:
+            return value
+        
     #
     #   INDEPENDENT KEYWORD PARSE
     #
@@ -261,10 +281,11 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 self.arrowLeft(x, y, sizex, sizey)
                 
         elif command == 'fill':
-            self.fill(params)
+            color = self.resolve_col(registry, params)
+            self.fill(color)
             
         elif command == 'rotate':
-            self.rotate(params)
+            self.rotate(self.resolve_digit(registry, params))
             
         elif command == 'text':
             params = params.split(' ')
@@ -289,17 +310,17 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
         elif command == 'do':
             params = list(filter((lambda x:x!=''), params.split(' ')))
             op = params[0]
-            val = params[1]
+            val = self.resolve_digit(registry, params[1])
             var = params[3]
             if params[2] == 'to':
                 if op == '+':
-                    registry[var] = int(registry[var]) + int(val)
+                    registry[var] = float(registry[var]) + float(val)
                 if op == '-':
-                    registry[var] = int(registry[var]) - int(val)
+                    registry[var] = float(registry[var]) - float(val)
                 if op == '*':
-                    registry[var] = int(registry[var]) * int(val)
+                    registry[var] = float(registry[var]) * float(val)
                 if op == '/':
-                    registry[var] = int(registry[var]) // int(val)
+                    registry[var] = float(registry[var]) // float(val)
         
         #
         #   DENUG / SHOW
@@ -369,7 +390,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                         for line in self.funcs[fname]['body'].strip('\n').split('\n'):
                             x = line.strip('\n').split(' ', 1)
                             self.parse( self.vars, x[0], x[1])
-                    else:
+                    else: # TODO resolve digit for parameters
                         params = wds[2:]
                         i = 0
                         for key in self.funcs[fname]['params']:
@@ -413,7 +434,7 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
         self.end()
 
 if __name__ == '__main__':
-    script = CssScript('file.candy')
+    script = CssScript('C:/Users/Dell/Desktop/entry/git/css-script-candy/css_script/file.candy')
     script.exec()
     
 

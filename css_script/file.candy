@@ -1,8 +1,94 @@
+set x 10
+set y 10
+
+set r 100
+
 loop 100
-fill rgba(200,200,200,0.3)
-rect  rand|0|100  rand|0|100  20  20
-# color xyx
+do + 50 to y
+do + 50 to x
+set sinex sine|x
+set cosy cos|y
+do * r to sinex
+do * r to cosy
+do + 100 to sinex
+do + 100 to cosy
+fill randCol|
+circle sinex cosy 30 30
 
+do - 10 to r
+loop 100
+do + 50 to y
+do + 50 to x
+set sinex sine|x
+set cosy cos|y
+do * r to sinex
+do * r to cosy
+do + 100 to sinex
+do + 100 to cosy
+fill randCol|
+circle sinex cosy 30 30
 
+do - 10 to r
+loop 100
+do + 50 to y
+do + 50 to x
+set sinex sine|x
+set cosy cos|y
+do * r to sinex
+do * r to cosy
+do + 100 to sinex
+do + 100 to cosy
+fill randCol|
+circle sinex cosy 30 30
 
+do - 10 to r
+loop 100
+do + 50 to y
+do + 50 to x
+set sinex sine|x
+set cosy cos|y
+do * r to sinex
+do * r to cosy
+do + 100 to sinex
+do + 100 to cosy
+fill randCol|
+circle sinex cosy 30 30
+
+do - 10 to r
+loop 100
+do + 50 to y
+do + 50 to x
+set sinex sine|x
+set cosy cos|y
+do * r to sinex
+do * r to cosy
+do + 100 to sinex
+do + 100 to cosy
+fill randCol|
+circle sinex cosy 30 30
+
+loop 100
+do + 50 to y
+do + 50 to x
+set sinex sine|x
+set cosy cos|y
+do * r to sinex
+do * r to cosy
+do + 100 to sinex
+do + 100 to cosy
+fill randCol|
+circle sinex cosy 30 30
+
+do - 20 to r
+loop 100
+do + 50 to y
+do + 50 to x
+set sinex sine|x
+set cosy cos|y
+do * r to sinex
+do * r to cosy
+do + 100 to sinex
+do + 100 to cosy
+fill randCol|
+circle sinex cosy 30 30
 
