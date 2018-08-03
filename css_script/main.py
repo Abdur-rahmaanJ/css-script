@@ -8,7 +8,7 @@ import random
 import math
  
 class CssScript:
-    def __init__(self, source):
+    def __init__(self):
         #
         #   HTML TEMPLATES PARTS
         #
@@ -48,7 +48,6 @@ class CssScript:
         self.vars = {0:1}
         self.colors = {}
         
-        self.source = open(source, 'r')
         
         #
         #   FLAGS
@@ -323,7 +322,9 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                     registry[var] = float(registry[var]) // float(val)
         
         #
-        #   DENUG / SHOW
+        #   DEBUG / SHOW 
+        #
+        # SHOW shows on screen
         #
         elif  command == 'show':
             params = list(filter((lambda x:x!=''), params.split(' ')))
@@ -331,6 +332,16 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
                 x = self.resolve_digit(registry, params[0])
                 y = self.resolve_digit(registry, params[1])
                 self.text(x, y, registry[params[2]])
+            except KeyError:
+                print('key undefined')
+        #
+        # DEBUG shows in console
+        #
+        elif  command == 'debug':
+            params = list(filter((lambda x:x!=''), params.split(' ')))
+            try:
+                value = self.resolve_digit(registry, params[0])
+                print(value)
             except KeyError:
                 print('key undefined')
                 
@@ -428,14 +439,15 @@ solid {};'.format(int(width)/2, int(width)/2,height, self.bg_col))
     #
     #   CALLABLE METHOD
     #
-    def exec(self):
+    def exec(self, file_path):
+        self.source = open(file_path, 'r')
         self.init()
         self.passover(self.source)
         self.end()
 
 if __name__ == '__main__':
-    script = CssScript('C:/Users/Dell/Desktop/entry/git/css-script-candy/css_script/file.candy')
-    script.exec()
+    script = CssScript()
+    script.exec('file.candy')
     
 
 

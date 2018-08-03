@@ -1,94 +1,10 @@
+
 set x 10
-set y 10
 
-set r 100
-
-loop 100
-do + 50 to y
-do + 50 to x
-set sinex sine|x
-set cosy cos|y
-do * r to sinex
-do * r to cosy
-do + 100 to sinex
-do + 100 to cosy
+loop 10
 fill randCol|
-circle sinex cosy 30 30
+circle x 20 20 20 
+do + 10 to x
 
-do - 10 to r
-loop 100
-do + 50 to y
-do + 50 to x
-set sinex sine|x
-set cosy cos|y
-do * r to sinex
-do * r to cosy
-do + 100 to sinex
-do + 100 to cosy
-fill randCol|
-circle sinex cosy 30 30
 
-do - 10 to r
-loop 100
-do + 50 to y
-do + 50 to x
-set sinex sine|x
-set cosy cos|y
-do * r to sinex
-do * r to cosy
-do + 100 to sinex
-do + 100 to cosy
-fill randCol|
-circle sinex cosy 30 30
-
-do - 10 to r
-loop 100
-do + 50 to y
-do + 50 to x
-set sinex sine|x
-set cosy cos|y
-do * r to sinex
-do * r to cosy
-do + 100 to sinex
-do + 100 to cosy
-fill randCol|
-circle sinex cosy 30 30
-
-do - 10 to r
-loop 100
-do + 50 to y
-do + 50 to x
-set sinex sine|x
-set cosy cos|y
-do * r to sinex
-do * r to cosy
-do + 100 to sinex
-do + 100 to cosy
-fill randCol|
-circle sinex cosy 30 30
-
-loop 100
-do + 50 to y
-do + 50 to x
-set sinex sine|x
-set cosy cos|y
-do * r to sinex
-do * r to cosy
-do + 100 to sinex
-do + 100 to cosy
-fill randCol|
-circle sinex cosy 30 30
-
-do - 20 to r
-loop 100
-do + 50 to y
-do + 50 to x
-set sinex sine|x
-set cosy cos|y
-do * r to sinex
-do * r to cosy
-do + 100 to sinex
-do + 100 to cosy
-fill randCol|
-circle sinex cosy 30 30
 
